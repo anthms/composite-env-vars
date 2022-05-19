@@ -1,5 +1,5 @@
 name: 'Set ENV variables'
-description: 'Existing ENV var doesn't change until composite action completes.'
+description: 'Composite action'
 runs:
   using: "composite"
   steps:
