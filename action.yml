@@ -1,0 +1,27 @@
+name: 'Set ENV variables'
+description: 'Existing ENV var doesn't change until composite action completes.'
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        echo "VAR1=15" >> $GITHUB_ENV
+        echo "VAR2=25" >> $GITHUB_ENV
+      shell: bash
+    - run: |
+        echo $VAR1
+        echo $VAR2
+        echo "${{env.VAR1}}"
+        echo "${{env.VAR2}}"
+      shell: bash
+    - run: |
+        echo "VAR1=20" >> $GITHUB_ENV
+        echo "VAR2=30" >> $GITHUB_ENV
+      shell: bash
+    - run: |
+        echo $VAR1
+        echo $VAR2
+        echo "${{env.VAR1}}"
+        echo "${{env.VAR2}}"
+      shell: bash
+    
+      
