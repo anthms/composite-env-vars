@@ -4,28 +4,22 @@ runs:
   using: "composite"
   steps:
     - run: echo "VAR1=15" >> $GITHUB_ENV
+      env: VAR1
       shell: bash
     - run: echo "VAR2=25" >> $GITHUB_ENV
       shell: bash
+      
     - run: echo $VAR1
       shell: bash
     - run: echo $VAR2
       shell: bash
-    - run: echo '${{ env.VAR1 }}'
-      shell: bash
-    - run: echo '${{ env.VAR2 }}'
-      shell: bash
+      
     - run: echo "VAR1=20" >> $GITHUB_ENV
       shell: bash
     - run: echo "VAR2=30" >> $GITHUB_ENV
       shell: bash
+      
     - run: echo $VAR1
       shell: bash
     - run: echo $VAR2
       shell: bash
-    - run: echo '${{ env.VAR1 }}'
-      shell: bash
-    - run: echo '${{ env.VAR2 }}'
-      shell: bash
-    
-      
