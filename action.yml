@@ -3,9 +3,7 @@ description: 'Composite action'
 runs:
   using: "composite"
   steps:
-    - run: echo "Setting VAR1"
-      env:
-        VAR1: 15
+    - run: echo "VAR1=15" >> $GITHUB_ENV
       shell: bash
     - run: echo "VAR2=25" >> $GITHUB_ENV
       shell: bash
